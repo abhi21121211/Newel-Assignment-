@@ -72,8 +72,8 @@ function AddEditPage() {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="add-edit-page-container">
+            <form onSubmit={handleSubmit} className="add-edit-form">
                 <input required={true} type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" />
                 <select required={true} name="department" value={formData.department} onChange={handleChange}>
                     <option value="">Select Department</option>
@@ -84,7 +84,7 @@ function AddEditPage() {
                     {/* Add more department options as needed */}
                 </select>
                 <input required={true} type="date" name="dateOfJoining" value={formData.dateOfJoining} onChange={handleChange} placeholder="Date Of Joining" />
-                <input required={true} type="text" name="address" value={formData.address} onChange={handleChange} placeholder="Address" />
+                <textarea required={true} type="text" name="address" value={formData.address} onChange={handleChange} placeholder="Address" />
                 <label>
                     Hobbies:
                     <input type="checkbox" name="hobbies" value="Reading" checked={formData.hobbies.includes('Reading')} onChange={handleChange} /> Reading

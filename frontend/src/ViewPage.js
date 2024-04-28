@@ -19,20 +19,18 @@ function ViewPage() {
         Navigate('/list');
     }
     return (
-        <div>{
-            employee && (
-                <div>
+        <div className="view-page-container">
+            {employee && (
+                <div className="employee-details">
                     <h1>{employee.name}</h1>
-                    <p>{employee.department}</p>
-                    <p>{employee.dateOfJoining}</p>
-                    <p>{employee.hobbies}</p>
-                    <p>{employee.address}</p>
-                    <p>{employee.gender}</p>
+                    <p>Department: {employee.department}</p>
+                    <p>Date of Joining: {employee.dateOfJoining}</p>
+                    <p>Hobbies: {employee.hobbies.join(', ')}</p>
+                    <p>Address: {employee.address}</p>
+                    <p>Gender: {employee.gender}</p>
                     <button onClick={handleBack}>Back</button>
                 </div>
-
             )}
-
         </div>
     )
 }

@@ -29,9 +29,9 @@ function ListPage() {
     };
 
     return (
-        <div>
-            <input type='text' value={searchTerm} onChange={e => setSearchTerm(e.target.value)} placeholder='Search' />
-            <table>
+        <div className="list-page-container" >
+            <input className="search-input" type='text' value={searchTerm} onChange={e => setSearchTerm(e.target.value)} placeholder='Search' />
+            <table className="employee-table">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -48,16 +48,16 @@ function ListPage() {
                                 <td>{employee.department}</td>
                                 <td>{new Date(employee.dateOfJoining).toLocaleDateString()}</td>
                                 <td>
-                                    <Link to={`/view/${employee._id}`}><button>View</button></Link>
-                                    <Link to={`/edit/${employee._id}`}><button>Edit</button></Link>
-                                    <button onClick={() => handleDelete(employee._id)}>Delete</button>
+                                    <Link to={`/view/${employee._id}`}><button className="action-button">View</button></Link>
+                                    <Link to={`/edit/${employee._id}`}><button className="action-button">Edit</button></Link>
+                                    <button className="action-button" onClick={() => handleDelete(employee._id)}>Delete</button>
                                 </td>
                             </tr>
                         ))
                     }
                 </tbody>
             </table>
-            <Link to="/add"><button>Add Employee</button></Link>
+            <Link to="/add"><button className="add-button">Add Employee</button></Link>
         </div>
     )
 }

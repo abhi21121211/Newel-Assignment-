@@ -17,14 +17,7 @@ function App() {
     setLoggedIn(userLoggedIn);
   }, [])
 
-  const handleLogin = () => {
-    setLoggedIn(true);
-    localStorage.setItem('loggedIn', 'true');
-  }
-
-  const handleLogout = () => {
-    setLoggedIn(false);
-  }
+  
   return (
     <div className="App">
       <Router>
