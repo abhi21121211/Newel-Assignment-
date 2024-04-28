@@ -55,7 +55,7 @@ function AddEditPage() {
         if (id) {
             axios.put(`http://localhost:5000/api/employees/${id}`, formData)
                 .then(res => {
-                    navigate('/');
+                    navigate('/list');
                 })
                 .catch(err => {
                     console.log(err);
@@ -63,7 +63,7 @@ function AddEditPage() {
         } else {
             axios.post('http://localhost:5000/api/employees', formData)
                 .then(res => {
-                    navigate('/');
+                    navigate('/list');
                 })
                 .catch(err => {
                     console.log(err);
@@ -87,7 +87,7 @@ function AddEditPage() {
                 <input required={true} type="text" name="address" value={formData.address} onChange={handleChange} placeholder="Address" />
                 <label>
                     Hobbies:
-                    <input  type="checkbox" name="hobbies" value="Reading" checked={formData.hobbies.includes('Reading')} onChange={handleChange} /> Reading
+                    <input type="checkbox" name="hobbies" value="Reading" checked={formData.hobbies.includes('Reading')} onChange={handleChange} /> Reading
                 </label>
                 <label>
                     <input type="checkbox" name="hobbies" value="Gaming" checked={formData.hobbies.includes('Gaming')} onChange={handleChange} /> Gaming
@@ -98,7 +98,7 @@ function AddEditPage() {
                 <label>
                     <input type="checkbox" name="hobbies" value="Playing" checked={formData.hobbies.includes('Playing')} onChange={handleChange} /> Playing
                 </label>
-        
+
                 <div>
                     Gender:
                     <label>
@@ -109,7 +109,7 @@ function AddEditPage() {
                     </label>
                 </div>
                 {id ? (<button type='submit'>Update</button>) : (<button type='submit'>Save</button>)}
-                <button onClick={() => navigate('/')}>Back</button>
+                <button onClick={() => navigate('/list')}>Back</button>
             </form>
         </div>
     );

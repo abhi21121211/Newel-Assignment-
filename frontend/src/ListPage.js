@@ -46,7 +46,7 @@ function ListPage() {
                             <tr key={employee._id}>
                                 <td>{employee.name}</td>
                                 <td>{employee.department}</td>
-                                <td>{new Date(employee.dateOfJoining).toLocaleDateString()}</td> {/* Display only date */}
+                                <td>{new Date(employee.dateOfJoining).toLocaleDateString()}</td>
                                 <td>
                                     <Link to={`/view/${employee._id}`}><button>View</button></Link>
                                     <Link to={`/edit/${employee._id}`}><button>Edit</button></Link>

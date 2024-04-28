@@ -14,27 +14,27 @@ function ViewPage() {
             })
             .catch(err => console.log(err))
     }, [id])
-    
+
     const handleBack = () => {
-        Navigate('/');
+        Navigate('/list');
     }
-  return (
-      <div>{
-          employee && (
-              <div>
-                  <h1>{employee.name}</h1>
-                  <p>{employee.department}</p>
-                  <p>{employee.dateOfJoining}</p>
-                  <p>{employee.hobbies}</p>
-                  <p>{employee.address}</p>
-                  <p>{employee.gender}</p>
-                  <button onClick={handleBack}>Back</button>
-              </div>
-              
-          )}
-      
-    </div>
-  )
+    return (
+        <div>{
+            employee && (
+                <div>
+                    <h1>{employee.name}</h1>
+                    <p>{employee.department}</p>
+                    <p>{employee.dateOfJoining}</p>
+                    <p>{employee.hobbies}</p>
+                    <p>{employee.address}</p>
+                    <p>{employee.gender}</p>
+                    <button onClick={handleBack}>Back</button>
+                </div>
+
+            )}
+
+        </div>
+    )
 }
 
 export default ViewPage

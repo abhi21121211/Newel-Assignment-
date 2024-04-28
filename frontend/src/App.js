@@ -38,8 +38,8 @@ function App() {
 
 
 
-
-          <Route path="/" element={<ListPage />} />
+<Route path="/" element={<LoginPage />} />
+          <Route path="/list" element={<ListPage />} />
           <Route path="/add" element={<AddEditPage />} />
           <Route path="/edit/:id" element={<AddEditPage />} />
           <Route path="/view/:id" element={<ViewPage />} />
